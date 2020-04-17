@@ -1,0 +1,23 @@
+minecraft_name: girls-mc-server
+minecraft_type: PAPER
+minecraft_definition:
+    name: "{{ minecraft_name }}"
+    image: itzg/minecraft-server
+    state: started
+    pull: true
+    restart: yes
+    restart_policy: unless-stopped
+    ports:
+     - 25565:25565
+    command: "--noconsole"
+    env:
+        PGID: "1000"
+        PUID: "1000"
+        SEED: "{{ seed | default('') }}"
+        LEVEL: "{{ world_name | default('world') }}"
+        TZ: "America/Chicago"
+        EULA: "TRUE"
+        TYPE: "{{ minecraft_type }}"
+        VERSION: "{{ version }}"
+    volumes:
+     - /media/c/configs/{{ minecraft_name }}/:/data

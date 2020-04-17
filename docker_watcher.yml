@@ -1,0 +1,10 @@
+---
+- hosts: dockerhost1
+
+  tasks:
+    - import_tasks: tasks/vpn.yaml
+    - import_tasks: tasks/jackett.yaml
+    - import_tasks: tasks/deluge.yaml
+    - import_tasks: tasks/radarr.yaml
+    - import_tasks: tasks/sonarr.yaml
+    - import_tasks: tasks/minecraft.yaml

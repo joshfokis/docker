@@ -1,0 +1,8 @@
+---
+- hosts: dockerhost1
+  gather_facts: yes
+  vars:
+    FOUND: "False"
+  vars_files: vars/minecraft.yaml
+  tasks:
+    - import_tasks: tasks/minecraft.yaml

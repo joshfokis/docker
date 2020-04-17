@@ -1,0 +1,22 @@
+- name: start Don't Starve Together container
+  when: ACTION=="dststart"
+  docker_container:
+    "{{dst_definition}}"
+
+- name: stop Don't Starve Together container
+  when: ACTION=="dststop"
+  docker_container:
+    "{{dst_definition}}"
+
+- name: Check if server dir exists, create dir, create container
+  block:
+  - name: Check if dir exists for server
+    file:
+      dest: "/media/c/dst/{{dst_server}}/"
+      state: directory
+
+  - name: create Don't Starve Together container
+    docker_container:
+      "{{dst_definition}}"
+
+  when: ACTION=="dstcreate"

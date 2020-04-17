@@ -1,0 +1,18 @@
+- name: Restart a container
+  when: ACTION=="refresh"
+  docker_container:
+    name: deluge
+    image: linuxserver/deluge
+    state: started
+    pull: true
+    restart: yes
+    restart_policy: unless-stopped
+    network_mode: container:vpn
+    env:
+        PGID: "1000"
+        PUID: "1000"
+        TZ: "America/Chicago"
+    volumes:
+     - /media/c/config/deluge:/config
+     - /media/downloads/:/downloads/
+

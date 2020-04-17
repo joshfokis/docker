@@ -1,0 +1,67 @@
+---
+- name: Verify backup location is created
+  when: ACTION=="backup" or ACTION=="new-world" or ACTION=="upgrade"
+  file:
+    dest: "/media/c/{{minecraft_name}}/"
+    state: directory
+
+- name: Archive world to generate new-world
+  when: ACTION=="new-world" or ACTION=="backup" or ACTION=="upgrade"
+  archive:
+   format: tar
+   path: 
+   - "/media/c/configs/{{minecraft_name}}/"
+   dest: "/media/c/{{minecraft_name}}/{{minecraft_name}}-backup-{{ ansible_date_time.iso8601_basic }}.tar"
+
+- name: Clean Minecraft folder
+  when: ACTION=="new-world"
+  file:
+    path: "/media/c/configs/{{minecraft_name}}/world/"
+    state: absent
+
+- name: Clean Minecraft folder
+  when: ACTION=="new-world"
+  file:
+    path: "/media/c/configs/{{minecraft_name}}/world_nether/"
+    state: absent
+
+- name: Clean Minecraft folder
+  when: ACTION=="new-world"
+  file:
+    path: "/media/c/configs/{{minecraft_name}}/world_the_end/"
+    state: absent
+
+- name: Get Current version
+  when: ACTION=="restart" or ACTION=="new-world"
+  shell: "cat /media/c/configs/{{minecraft_name}}/version"
+  register: version
+  
+- name: Insert seed into config
+  when: ACTION=="new-world" and SEED is defined
+  lineinfile:
+    path: "/media/c/configs/{{minecraft_name}}/server.properties"
+    regexp: "^level-seed:"
+    line: "level-seed: {{seed}}"
+
+- name: Restart a container
+  when: ACTION=="restart" or ACTION=="new-world"
+  docker_container:
+    definition: "{{minecraft_definition}}"
+
+- name: Check Version Availability
+  shell: "/opt/scripts/papermccheck.py -v {{ version }}"
+  when: ACTION=="upgrade" and minecraft_type=="PAPER"
+  register: FOUND
+
+- name: Add version to file
+  when: ACTION=="upgrade" and FOUND.stdout=="True"
+  lineinfile:
+    path: "/media/c/configs/{{minecraft_name}}/version"
+    create: yes
+    regexp: "^\\d\\.\\d\\d.*$"
+    line: "{{version}}"
+
+- name: Update Version of Minecraft
+  when: ACTION=="upgrade" and FOUND.stdout=="True"
+  docker_container:
+    "{{minecraft_definition}}"

@@ -1,0 +1,17 @@
+- name: Restart a container
+  when: ACTION=="refresh"
+  docker_container:
+    name: jackett
+    image: linuxserver/jackett
+    state: started
+    restart: yes
+    pull: true
+    restart_policy: unless-stopped
+    network_mode: container:vpn
+    env:
+        PGID: "1000"
+        PUID: "1000"
+        TZ: "America/Chicago"
+    volumes:
+     - /media/c/config/jackett:/config
+     - /media/downloads/:/downloads/

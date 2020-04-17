@@ -1,0 +1,73 @@
+# - name: start 7 Days to Die container
+#   when: ACTION=="7daysstart"
+#   docker_container:
+#     name: 7d2d
+#     image: zobees/7daystodie
+#     state: started
+#     restart_policy: unless-stopped
+#     env:
+#       PGID: "1000"
+#       PUID: "1000"
+#       CONFIG_FILE: "fokisserverconfig.xml"
+#       QUERY_PORT: "26901"
+#     volumes:
+#     - /home/josh/configs/7daystodie/:/data
+#     ports:
+#      - 8001:8001
+#      - 8002:8002
+#      - 26900-26902:26900-26902
+#      - 26900-26902:26900-26902/udp
+
+- name: Check for players
+  vars:
+    - port: 8001
+  shell: "/opt/scripts/telnet.py localhost {{ port }}"
+  register: telnet_out
+
+- name: parse output
+  debug: 
+    msg: "{{telnet_out.stdout_lines}}"
+  #when: telnet_out.stdout_lines=="Total of 0 in the game"
+  #register: Empty=="True"
+
+# - name: stop 7 Days to Die container
+#   when: ACTION=="7daysstart"
+#   docker_container:
+#     name: 7d2d
+#     image: zobees/7daystodie
+#     state: stopped
+#     restart_policy: unless-stopped
+#     env:
+#       PGID: "1000"
+#       PUID: "1000"
+#       CONFIG_FILE: "fokisserverconfig.xml"
+#       QUERY_PORT: "26901"
+#     volumes:
+#     - /home/josh/configs/7daystodie/:/data
+#     ports:
+#      - 8001:8001
+#      - 8002:8002
+#      - 26900-26902:26900-26902
+#      - 26900-26902:26900-26902/udp
+
+# - name: update 7 Days to Die container
+#   when: ACTION=="7daysupdate"
+#   docker_container:
+#     name: 7d2d
+#     image: zobees/7daystodie
+#     pulle: yes
+#     restart: yes
+#     state: started
+#     restart_policy: unless-stopped
+#     env:
+#       PGID: "1000"
+#       PUID: "1000"
+#       CONFIG_FILE: "fokisserverconfig.xml"
+#       QUERY_PORT: "26901"
+#     volumes:
+#     - /home/josh/configs/7daystodie/:/data
+#     ports:
+#      - 8001:8001
+#      - 8002:8002
+#      - 26900-26902:26900-26902
+#      - 26900-26902:26900-26902/udp

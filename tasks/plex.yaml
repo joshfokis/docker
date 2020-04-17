@@ -1,0 +1,17 @@
+- name: Restart a container
+  when: ACTION=="refresh"
+  docker_container:
+    name: plex
+    image: linuxserver/plex
+    state: started
+    pull: true
+    restart: yes
+    restart_policy: unless-stopped
+    env:
+        PGID: "1000"
+        PUID: "1000"
+        TZ: "America/Chicago"
+    volumes:
+     - /home/josh/configs/plex:/config
+     - /home/josh/configs/plex_mounts/media:/media
+     - /media/c/trans:/trasncode
