@@ -2,7 +2,7 @@
   git:
     repo: https://gitlab.theflinners.com/joshfokis/discord-bot.git
     update: yes
-    dest: /media/c/configs/scripts
+    dest: /media/c/configs/scripts/discord-bot/
 
 - name: Restart a container
   docker_container:
