@@ -1,0 +1,4 @@
+- hosts: dockerhost1
+
+  tasks:
+    - import_tasks: tasks/discord-bot.yaml
