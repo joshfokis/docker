@@ -1,4 +1,4 @@
 - hosts: dockerhost1
-
+  vars_files: vars/discord-bot.yaml
   tasks:
     - import_tasks: tasks/discord-bot.yaml
