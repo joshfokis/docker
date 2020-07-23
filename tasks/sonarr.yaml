@@ -1,5 +1,5 @@
 - name: Restart a container
-  when: ACTION=="refresh"
+  
   docker_container:
     name: sonarr
     image: linuxserver/sonarr

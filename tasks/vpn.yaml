@@ -1,5 +1,5 @@
 - name: Restart a container
-  when: ACTION=="refresh"
+  
   vars:
    secret: !vault |
           $ANSIBLE_VAULT;1.1;AES256

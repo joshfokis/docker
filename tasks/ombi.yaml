@@ -1,5 +1,4 @@
 - name: Restart a container
-  when: ACTION=="refresh"
   docker_container:
     name: ombi
     image: linuxserver/ombi:v4-preview
