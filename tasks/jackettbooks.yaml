@@ -1,7 +1,7 @@
 - name: Restart a container
   
   docker_container:
-    name: jackett
+    name: jackettbooks
     image: linuxserver/jackett
     state: started
     restart: yes
