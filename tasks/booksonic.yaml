@@ -6,8 +6,6 @@
     pull: true
     restart: yes
     restart_policy: unless-stopped
-    ports:
-      - 4040:4040
     env:
         PGID: "1000"
         PUID: "1000"
@@ -15,3 +13,5 @@
     volumes:
      - /home/josh/configs/booksonic:/config
      - /media/tv/media/Books/Audio\ Books/:/audiobooks
+    published_ports:
+     - 4040:4040

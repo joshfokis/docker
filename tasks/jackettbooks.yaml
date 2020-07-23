@@ -1,11 +1,11 @@
 - name: Restart a container
   
   docker_container:
-    name: sonarr
-    image: linuxserver/sonarr
+    name: jackett
+    image: linuxserver/jackett
     state: started
-    pull: true
     restart: yes
+    pull: true
     restart_policy: unless-stopped
     network_mode: container:vpn
     env:
@@ -13,8 +13,7 @@
         PUID: "1000"
         TZ: "America/Chicago"
     volumes:
-     - /media/c/config/sonarr:/config
+     - /media/c/config/jackett:/config
      - /media/downloads/:/downloads/
-     - /media/tv/media/TV:/tv
     published_ports:
-      - 8989:8989
+      - 9118:9118

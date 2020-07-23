@@ -14,3 +14,5 @@
     volumes:
      - /media/tv/media/Books:/books
      - /media/c/configs/calibre:/config
+    published_ports:
+      - 8083:8083

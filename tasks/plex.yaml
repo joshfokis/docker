@@ -12,6 +12,8 @@
         PUID: "1000"
         TZ: "America/Chicago"
     volumes:
-     - /home/josh/configs/plex:/config
+     - /media/c/configs/plex:/config
      - /home/josh/configs/plex_mounts/media:/media
      - /media/c/trans:/trasncode
+    published_ports:
+      - 32400:32400

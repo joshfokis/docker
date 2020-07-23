@@ -1,5 +1,4 @@
 - name: Restart a container
-  
   docker_container:
     name: deluge
     image: linuxserver/deluge
@@ -15,4 +14,5 @@
     volumes:
      - /media/c/config/deluge:/config
      - /media/downloads/:/downloads/
-
+    published_ports:
+      - 8112:8112

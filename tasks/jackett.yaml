@@ -15,3 +15,5 @@
     volumes:
      - /media/c/config/jackett:/config
      - /media/downloads/:/downloads/
+    published_ports:
+      - 9117:9117

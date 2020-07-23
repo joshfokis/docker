@@ -12,3 +12,5 @@
         TZ: "America/Chicago"
     volumes:
      - /media/c/config/ombi:/config
+    published_ports:
+      - 3579:3579
