@@ -14,5 +14,3 @@
     volumes:
      - /media/c/config/deluge:/config
      - /media/downloads/:/downloads/
-    published_ports:
-      - 8112:8112

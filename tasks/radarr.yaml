@@ -15,5 +15,3 @@
      - /media/c/config/radarr:/config
      - /media/downloads/:/downloads/
      - /media/movies/media/Movies:/movies
-    published_ports:
-      - 7887:7878
