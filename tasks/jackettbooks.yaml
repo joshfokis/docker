@@ -15,4 +15,4 @@
      - /media/c/config/jackettbooks:/config
      - /media/downloads/:/downloads/
     published_ports:
-      - 9118:9118
+      - 9118:9117

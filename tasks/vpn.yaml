@@ -31,7 +31,7 @@
         TZ: "America/Chicago"
         
     volumes:
-     - /home/josh/configs/vpn/:/vpn
+     - /media/c/configs/vpn/:/vpn
      - "{{ secret }}"
 
     devices:
