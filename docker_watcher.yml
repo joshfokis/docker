@@ -7,4 +7,8 @@
     - import_tasks: tasks/deluge.yaml
     - import_tasks: tasks/radarr.yaml
     - import_tasks: tasks/sonarr.yaml
-    - import_tasks: tasks/minecraft.yaml
+    - import_tasks: tasks/plex.yaml
+    - import_tasks: tasks/ombi.yaml
+    - import_tasks: tasks/portainer.yaml
+    - import_tasks: tasks/lazylibrarian.yaml
+    - import_tasks: tasks/letsencrypt.yaml

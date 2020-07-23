@@ -1,0 +1,15 @@
+- name: Restart a container
+  when: ACTION=="refresh"
+  docker_container:
+    name: ombi
+    image: linuxserver/ombi:v4-preview
+    state: started
+    restart: yes
+    pull: true
+    restart_policy: unless-stopped
+    env:
+        PGID: "1000"
+        PUID: "1000"
+        TZ: "America/Chicago"
+    volumes:
+     - /media/c/config/ombi:/config

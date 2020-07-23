@@ -1,0 +1,17 @@
+- name: Restart a container
+  when: ACTION=="refresh"
+  docker_container:
+    name: letsencrypt
+    image: linuxserver/letsencrypt
+    state: started
+    restart: yes
+    pull: true
+    restart_policy: unless-stopped
+    env:
+        PGID: "1000"
+        PUID: "1000"
+        TZ: "America/Chicago"
+        URL: "{{ URL }}"
+        SUBDOMAINS: "{{ SUBDOMAINS }}"
+    volumes:
+     - /media/c/configs/letsencrypt:/config

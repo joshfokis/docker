@@ -1,0 +1,17 @@
+- name: Restart a container
+  when: ACTION=="refresh"
+  docker_container:
+    name: calibre-web
+    image: linuxserver/calibre-web
+    state: started
+    restart: yes
+    pull: true
+    restart_policy: unless-stopped
+    env:
+        PGID: "1000"
+        PUID: "1000"
+        TZ: "America/Chicago"
+        DOCKER_MODS: "linuxserver/calibre-web:calibre"
+    volumes:
+     - /media/tv/media/Books:/books
+     - /media/c/configs/calibre:/config
