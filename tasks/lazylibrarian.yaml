@@ -1,4 +1,4 @@
-- name: Restart a container
+- name: Restart lazylibrarian
   docker_container:
     name: lazylibrarian
     image: linuxserver/lazylibrarian

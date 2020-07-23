@@ -5,7 +5,7 @@
     dest: /media/c/configs/scripts/discord-bot
     force: yes
 
-- name: Restart a container
+- name: Restart discord-bot
   docker_container:
     name: discordbot
     image: python:3

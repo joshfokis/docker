@@ -1,4 +1,4 @@
-- name: Restart a container
+- name: Restart radarr
   docker_container:
     name: radarr
     image: linuxserver/radarr

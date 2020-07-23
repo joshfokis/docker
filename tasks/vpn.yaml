@@ -1,4 +1,4 @@
-- name: Restart a container
+- name: Restart vpn
   tags:
     - vpn
   vars:

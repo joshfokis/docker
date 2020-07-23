@@ -1,4 +1,4 @@
-- name: Restart a container
+- name: Restart sonarr
   
   docker_container:
     name: sonarr

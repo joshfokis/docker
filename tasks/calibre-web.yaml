@@ -1,4 +1,4 @@
-- name: Restart a container
+- name: Restart calibre-web
   docker_container:
     name: calibre-web
     image: linuxserver/calibre-web

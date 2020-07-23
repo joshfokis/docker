@@ -1,4 +1,4 @@
-- name: Restart a container
+- name: Restart portainer
   docker_container:
     name: portainer
     image: portainer/portainer

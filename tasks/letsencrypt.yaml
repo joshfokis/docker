@@ -1,4 +1,4 @@
-- name: Restart a container
+- name: Restart letsencrypt
   docker_container:
     name: letsencrypt
     image: linuxserver/letsencrypt

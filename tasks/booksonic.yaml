@@ -1,4 +1,4 @@
-- name: Restart a container
+- name: Restart booksonic
   docker_container:
     name: booksonic
     image: linuxserver/booksonic

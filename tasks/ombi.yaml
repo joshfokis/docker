@@ -1,4 +1,4 @@
-- name: Restart a container
+- name: Restart ombi
   docker_container:
     name: ombi
     image: linuxserver/ombi:v4-preview

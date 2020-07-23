@@ -1,4 +1,4 @@
-- name: Restart a container
+- name: Restart deluge
   docker_container:
     name: deluge
     image: linuxserver/deluge

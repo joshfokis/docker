@@ -1,4 +1,4 @@
-- name: Restart a container
+- name: Restart jackett
   
   docker_container:
     name: jackett
