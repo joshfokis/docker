@@ -1,8 +1,13 @@
+# - name: Clear Folder before clone
+#   file:
+#     path: /media/c/configs/scripts/discord-bot
+#     state: absent
+
 - name: Update discord-bot code
   git:
     repo: https://gitlab.theflinners.com/joshfokis/discord-bot.git
     update: yes
-    dest: /media/c/configs/scripts
+    dest: /media/c/configs/scripts/discord-bot
     force: yes
 
 - name: Restart a container
