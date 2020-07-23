@@ -7,7 +7,6 @@
     restart: yes
     pull: true
     restart_policy: unless-stopped
-    network_mode: container:vpn
     env:
         PGID: "1000"
         PUID: "1000"

@@ -1,5 +1,5 @@
 - name: Restart a container
-  
+  tags: vpn
   vars:
    secret: !vault |
           $ANSIBLE_VAULT;1.1;AES256
