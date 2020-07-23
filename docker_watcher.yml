@@ -1,6 +1,6 @@
 ---
 - hosts: dockerhost1
-
+  vars_files: vars/letsencrypt.yaml
   tasks:
     - import_tasks: tasks/vpn.yaml
     - import_tasks: tasks/jackett.yaml
