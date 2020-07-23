@@ -12,3 +12,5 @@
     volumes:
      - /media/c/config/portainer:/data
      - /var/run/docker.sock:/var/run/docker.sock
+    published_ports:
+      - 9000:80
