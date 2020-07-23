@@ -1,8 +1,3 @@
-# - name: Clear Folder before clone
-#   file:
-#     path: /media/c/configs/scripts/discord-bot
-#     state: absent
-
 - name: Update discord-bot code
   git:
     repo: https://gitlab.theflinners.com/joshfokis/discord-bot.git
@@ -19,8 +14,8 @@
     restart: yes
     restart_policy: unless-stopped
     env:
-      APITOKEN: "{ APITOKEN }"
-      DISCORDTOKEN: "{ DISCORDTOKEN }"
+      APITOKEN: "{{ APITOKEN }}"
+      DISCORDTOKEN: "{{ DISCORDTOKEN }}"
     volumes:
      - /media/c/configs/scripts/discord-bot:/code
     command: "bash /code/start.sh"
