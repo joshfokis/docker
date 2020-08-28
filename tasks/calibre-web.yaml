@@ -1,4 +1,6 @@
 - name: Restart calibre-web
+  tags:
+    - calibre
   docker_container:
     name: calibre-web
     image: linuxserver/calibre-web

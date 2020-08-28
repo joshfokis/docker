@@ -1,4 +1,6 @@
 - name: Restart radarr
+  tags:
+    - radarr
   docker_container:
     name: radarr
     image: linuxserver/radarr

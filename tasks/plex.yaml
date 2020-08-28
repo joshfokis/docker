@@ -1,5 +1,6 @@
 - name: Restart plex
-  
+  tags:
+    - plex
   docker_container:
     name: plex
     image: linuxserver/plex

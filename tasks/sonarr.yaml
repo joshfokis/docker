@@ -1,5 +1,6 @@
 - name: Restart sonarr
-  
+  tags:
+    - sonarr
   docker_container:
     name: sonarr
     image: linuxserver/sonarr

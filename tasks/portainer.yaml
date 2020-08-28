@@ -1,4 +1,6 @@
 - name: Restart portainer
+  tags:
+    - portainer
   docker_container:
     name: portainer
     image: portainer/portainer

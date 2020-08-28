@@ -1,4 +1,6 @@
 - name: Restart letsencrypt
+  tags:
+    - letsencrypt
   docker_container:
     name: letsencrypt
     image: linuxserver/letsencrypt

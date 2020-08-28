@@ -1,4 +1,6 @@
 - name: Restart lazylibrarian
+  tags:
+    - lazylibrarian
   docker_container:
     name: lazylibrarian
     image: linuxserver/lazylibrarian

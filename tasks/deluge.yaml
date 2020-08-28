@@ -1,4 +1,6 @@
 - name: Restart deluge
+  tags:
+    - deluge
   docker_container:
     name: deluge
     image: linuxserver/deluge

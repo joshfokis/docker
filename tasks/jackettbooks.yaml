@@ -1,5 +1,6 @@
 - name: Restart jackettbooks
-  
+  tags:
+    - jackettbooks
   docker_container:
     name: jackettbooks
     image: linuxserver/jackett
