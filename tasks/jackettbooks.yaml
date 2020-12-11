@@ -13,7 +13,7 @@
         PUID: "1000"
         TZ: "America/Chicago"
     volumes:
-     - /media/c/config/jackettbooks:/config
+     - /media/c/config/jackett_books:/config
      - /media/downloads/:/downloads/
     published_ports:
       - 9118:9117
