@@ -2,8 +2,8 @@
   tags:
     - letsencrypt
   docker_container:
-    name: letsencrypt
-    image: linuxserver/letsencrypt
+    name: swag
+    image: linuxserver/swag
     state: started
     restart: yes
     pull: true
