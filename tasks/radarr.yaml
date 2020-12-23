@@ -16,4 +16,4 @@
     volumes:
      - /media/c/config/radarr:/config
      - /media/downloads/:/downloads/
-     - /media/movies/media/Movies:/movies
+     - /media/media/movies/media/Movies:/movies
