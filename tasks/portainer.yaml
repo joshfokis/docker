@@ -3,7 +3,7 @@
     - portainer
   docker_container:
     name: portainer
-    image: portainer/portainer-ce
+    image: portainer/portainer-ce:latest
     state: started
     pull: true
     restart: yes
