@@ -3,7 +3,7 @@
     - sonarr
   docker_container:
     name: sonarr
-    image: linuxserver/sonarr:preview
+    image: linuxserver/sonarr:latest
     state: started
     pull: true
     restart: yes
