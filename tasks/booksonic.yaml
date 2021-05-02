@@ -1,9 +1,9 @@
 - name: Restart booksonic
   tags:
     - booksonic
-  community.docker.docker_container:
-    name: booksonic
-    image: linuxserver/booksonic
+  docker_container:
+    name: booksonic-air
+    image: linuxserver/booksonic-air
     state: started
     pull: true
     restart: yes

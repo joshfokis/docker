@@ -1,7 +1,7 @@
 - name: Restart deluge
   tags:
     - deluge
-  community.docker.docker_container:
+  docker_container:
     name: deluge
     image: linuxserver/deluge
     state: started

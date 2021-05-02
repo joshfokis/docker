@@ -1,7 +1,7 @@
 - name: Restart portainer
   tags:
     - portainer
-  community.docker.docker_container:
+  docker_container:
     name: portainer
     image: portainer/portainer-ce:latest
     state: started

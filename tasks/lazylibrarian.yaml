@@ -1,7 +1,7 @@
 - name: Restart lazylibrarian
   tags:
     - lazylibrarian
-  community.docker.docker_container:
+  docker_container:
     name: lazylibrarian
     image: linuxserver/lazylibrarian
     state: started

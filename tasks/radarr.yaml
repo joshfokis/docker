@@ -1,7 +1,7 @@
 - name: Restart radarr
   tags:
     - radarr
-  community.docker.docker_container:
+  docker_container:
     name: radarr
     image: linuxserver/radarr:nightly
     state: started
