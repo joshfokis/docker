@@ -1,7 +1,7 @@
 - name: Restart booksonic
   tags:
     - booksonic
-  docker_container:
+  community.docker.docker_container:
     name: booksonic
     image: linuxserver/booksonic
     state: started
