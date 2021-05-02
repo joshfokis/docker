@@ -1,7 +1,7 @@
 - name: Restart sonarr
   tags:
     - sonarr
-  docker_container:
+  community.docker.docker_container:
     name: sonarr
     image: linuxserver/sonarr:latest
     state: started
