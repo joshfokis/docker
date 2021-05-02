@@ -1,7 +1,7 @@
 - name: Restart ombi
   tags:
     - ombi
-  docker_container:
+  community.docker.docker_container:
     name: ombi
     image: linuxserver/ombi:v4-preview
     state: started
