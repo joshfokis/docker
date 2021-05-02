@@ -13,3 +13,4 @@
     - import_tasks: tasks/portainer.yaml
     - import_tasks: tasks/lazylibrarian.yaml
     - import_tasks: tasks/letsencrypt.yaml
+    - import_tasks: tasks/calibre-web.yaml
