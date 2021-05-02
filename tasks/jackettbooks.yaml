@@ -1,7 +1,7 @@
 - name: Restart jackettbooks
   tags:
     - jackettbooks
-  docker_container:
+  community.docker.docker_container:
     name: jackettbooks
     image: linuxserver/jackett
     state: started
