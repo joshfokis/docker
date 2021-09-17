@@ -1,2 +1,2 @@
 collections:
-  - docker_container
+  - community.docker.docker_container
