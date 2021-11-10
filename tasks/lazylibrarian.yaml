@@ -6,7 +6,7 @@
     image: linuxserver/lazylibrarian
     state: started
     restart: yes
-    pull: true
+    pull: yes
     restart_policy: unless-stopped
     env:
         PGID: "1000"

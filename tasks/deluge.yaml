@@ -5,7 +5,7 @@
     name: deluge
     image: linuxserver/deluge
     state: started
-    pull: true
+    pull: yes
     restart: yes
     restart_policy: unless-stopped
     network_mode: container:vpn

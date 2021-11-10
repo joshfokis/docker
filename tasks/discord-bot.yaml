@@ -10,7 +10,7 @@
     name: discordbot
     image: python:3
     state: started
-    pull: true
+    pull: yes
     restart: yes
     restart_policy: unless-stopped
     env:

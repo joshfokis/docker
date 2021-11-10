@@ -5,7 +5,7 @@
     name: booksonic-air
     image: linuxserver/booksonic-air
     state: started
-    pull: true
+    pull: yes
     restart: yes
     restart_policy: unless-stopped
     env:
